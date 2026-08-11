@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Farewell</title>
+<meta name="description" content="You're invited to the send-off. RSVP and drop your photos." />
+<meta property="og:title" content="One last time — a send-off" />
+<meta property="og:description" content="RSVP and drop your photos." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+<style>
+/* ==========================================================
+   TOKENS
+   ========================================================== */
+:root{
+  --board:#17110E; --paper:#F2E7D2; --paper-2:#E8DAC0; --note:#F6EDA6;
+  --ink:#14100D; --ink-soft:#5A4A3C; --blue:#2E63F5; --rust:#C0522A;
+  --amber:#E8A33D; --cream-txt:#EFE3CE;
+
+  --display:"Anton",Impact,sans-serif;
+  --script:"Instrument Serif",Georgia,serif;
+  --hand:"Caveat",cursive;
+  --body:"DM Sans",ui-sans-serif,system-ui,sans-serif;
+
+  --torn:polygon(0% 2%,6% 0%,14% 3%,23% 1%,33% 4%,44% 1%,55% 3%,66% 0%,77% 3%,88% 1%,96% 4%,100% 2%,
+                 100% 97%,93% 100%,84% 97%,74% 100%,63% 97%,52% 100%,41% 97%,30% 100%,19% 97%,9% 100%,0% 98%);
+  --lift:0 14px 30px rgba(0,0,0,.55);
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+
+body{
+  margin:0; font-family:var(--body); font-size:17px; line-height:1.6;
+  color:var(--cream-txt);
+  background:
+    radial-gradient(900px 500px at 15% 0%, rgba(46,99,245,.14), transparent 60%),
+    radial-gradient(700px 500px at 90% 30%, rgba(192,82,42,.18), transparent 62%),
+    var(--board);
+  overflow-x:hidden;
+}
+
+.grain{
+  position:fixed; inset:0; z-index:99; pointer-events:none; opacity:.30;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+
+a{ color:inherit; }
+:focus-visible{ outline:3px solid var(--amber); outline-offset:4px; }
+.hidden{ display:none !important; }
+
+.wrap{ width:min(1060px,92vw); margin-inline:auto; position:relative; }
+section{ padding-block:clamp(3.5rem,8vw,6rem); position:relative; }
+
+/* ========== PAPER PIECES ========== */
+.paper{
+  background:var(--paper); color:var(--ink); clip-path:var(--torn);
+  padding:1.6rem 1.5rem; box-shadow:var(--lift); position:relative;
+}
+.paper--lined{
+  background:repeating-linear-gradient(to bottom,transparent 0 30px,rgba(46,99,245,.18) 30px 31px),var(--paper);
+}
+.tape{
+  position:absolute; top:-13px; left:50%; width:104px; height:27px;
+  transform:translateX(-50%) rotate(-3deg);
+  background:rgba(246,237,166,.55);
+  border-left:1px dashed rgba(0,0,0,.16); border-right:1px dashed rgba(0,0,0,.16);
+  box-shadow:0 2px 5px rgba(0,0,0,.3);
+}
+.tape--l{ left:16px; transform:rotate(-24deg); }
+.tape--r{ left:auto; right:8px; transform:rotate(18deg); }
+.pin{
+  position:absolute; top:-9px; left:50%; transform:translateX(-50%);
+  width:20px; height:20px; border-radius:50%;
+  background:radial-gradient(circle at 32% 30%,#ff8f7a,var(--rust) 60%,#6d2a12);
+  box-shadow:0 4px 7px rgba(0,0,0,.55);
+}
+.star{ position:absolute; width:44px; height:44px; pointer-events:none; opacity:.9; }
+.star svg{ width:100%; height:100%; display:block; }
+
+/* ========== TOP BAND ========== */
+.band{ background:var(--blue); color:#fff; overflow:hidden; white-space:nowrap; padding:11px 0; }
+.band__track{
+  display:inline-flex; gap:2.6rem; animation:slide 30s linear infinite;
+  font-weight:700; font-size:.72rem; letter-spacing:.3em; text-transform:uppercase;
+}
+@keyframes slide{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ========== HERO ========== */
+.hero{ padding-top:clamp(2.5rem,7vw,4.5rem); padding-bottom:clamp(2rem,5vw,3rem); }
+.batch{
+  display:inline-block; border:1.5px solid var(--blue); color:#9DB6FF;
+  border-radius:999px; padding:.32rem 1.1rem; font-size:.66rem;
+  letter-spacing:.26em; text-transform:uppercase; font-weight:700; margin-bottom:1.6rem;
+}
+.headline{ margin:0; position:relative; }
+.headline .line{
+  font-family:var(--display); font-size:clamp(3.2rem,14vw,9rem); line-height:.82;
+  text-transform:uppercase; display:block; color:var(--cream-txt);
+}
+.headline .line--blue{ color:var(--blue); }
+.headline .name{
+  font-family:var(--script); font-style:italic;
+  font-size:clamp(3rem,13vw,8.5rem); line-height:.9; color:#fff; display:block;
+  margin-left:clamp(1rem,9vw,7rem); margin-top:-.18em; text-transform:none; letter-spacing:-.01em;
+}
+.hero__grid{
+  display:grid; grid-template-columns:1.05fr .95fr;
+  gap:clamp(1.5rem,4vw,3rem); align-items:start; margin-top:clamp(2.5rem,6vw,4rem);
+}
+.blurb{ font-size:clamp(1.02rem,2.2vw,1.2rem); max-width:44ch; color:#DCCDB4; margin:0; }
+
+.details{ transform:rotate(-1.6deg); max-width:420px; padding:2rem 1.6rem 1.7rem; }
+.details dl{ margin:0; display:grid; gap:1.05rem; }
+.details dt{ font-family:var(--hand); font-size:1.55rem; color:var(--blue); line-height:1; }
+.details dd{ margin:.1rem 0 0; font-weight:500; color:var(--ink); font-size:1.02rem; }
+.details a{ text-decoration-thickness:1px; text-underline-offset:3px; }
+.details .tbd{ color:var(--rust); font-family:var(--hand); font-size:1.5rem; }
+
+.sticky{
+  background:var(--note); color:var(--ink); padding:1.2rem 1.2rem 1.4rem;
+  max-width:260px; transform:rotate(2.6deg); box-shadow:var(--lift);
+  margin-top:1.6rem; margin-left:auto; position:relative;
+  clip-path:polygon(0 0,100% 0,100% 88%,88% 100%,0 100%);
+}
+.sticky h4{ font-family:var(--hand); font-size:1.5rem; margin:0 0 .2rem; line-height:1; }
+.sticky p{ margin:0; font-family:var(--hand); font-size:1.25rem; line-height:1.25; }
+
+/* ========== COUNTDOWN ========== */
+.countdown__grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(.7rem,2vw,1.4rem); }
+.tile{
+  background:var(--paper); color:var(--ink); text-align:center;
+  padding:1.6rem .4rem 1rem; box-shadow:var(--lift); clip-path:var(--torn); position:relative;
+}
+.tile:nth-child(1){ transform:rotate(-2.4deg); }
+.tile:nth-child(2){ transform:rotate(1.6deg); background:var(--paper-2); }
+.tile:nth-child(3){ transform:rotate(-1deg); }
+.tile:nth-child(4){ transform:rotate(2.2deg); background:var(--paper-2); }
+.tile__num{
+  font-family:var(--display); font-size:clamp(2.1rem,7.5vw,4.2rem);
+  line-height:1; display:block; font-variant-numeric:tabular-nums;
+}
+.tile__label{
+  display:block; margin-top:.55rem; font-size:clamp(.58rem,1.5vw,.7rem);
+  letter-spacing:.24em; text-transform:uppercase; font-weight:700; color:var(--ink-soft);
+}
+.cd-note{ text-align:center; margin-top:1.8rem; font-family:var(--hand); font-size:1.5rem; color:var(--amber); }
+
+/* ========== FILM STRIP ========== */
+.film-scroll{
+  overflow-x:auto; overflow-y:hidden;
+  padding:14px 0 18px;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:thin; scrollbar-color:rgba(232,163,61,.5) transparent;
+}
+.film{
+  display:inline-flex; gap:10px;
+  background:#120D0A;
+  padding:30px 14px;
+  box-shadow:var(--lift);
+  transform:rotate(-1.3deg);
+  position:relative;
+  min-width:100%;
+}
+/* sprocket holes, top and bottom */
+.film::before,.film::after{
+  content:""; position:absolute; left:9px; right:9px; height:11px;
+  background:repeating-linear-gradient(to right,var(--paper) 0 16px,transparent 16px 31px);
+  opacity:.9;
+}
+.film::before{ top:9px; }
+.film::after{ bottom:9px; }
+
+.frame{
+  flex:0 0 auto;
+  width:clamp(122px,19vw,196px);
+  aspect-ratio:3/4;
+  overflow:hidden;
+  background:#2A1E18;
+}
+.frame img{
+  width:100%; height:100%; object-fit:cover; display:block;
+  filter:sepia(.2) saturate(.92) contrast(1.06);
+}
+.film-hint{
+  font-family:var(--hand); font-size:1.3rem; color:var(--amber);
+  margin:.4rem 0 0; text-align:right;
+}
+
+/* ========== HEADINGS ========== */
+.head{ margin-bottom:2.4rem; }
+.head h2{ font-family:var(--display); font-size:clamp(2rem,6.5vw,3.8rem); text-transform:uppercase; line-height:.9; margin:0; }
+.head h2 em{ font-family:var(--script); font-style:italic; text-transform:none; color:var(--amber); }
+
+/* ========== CARDS ========== */
+.cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(255px,1fr)); gap:clamp(1.2rem,3vw,2rem); }
+.card{
+  background:var(--paper); color:var(--ink); text-decoration:none;
+  padding:2rem 1.6rem 1.7rem; box-shadow:var(--lift); clip-path:var(--torn);
+  display:flex; flex-direction:column; gap:.6rem; transition:transform .18s ease; position:relative;
+}
+.card:nth-child(1){ transform:rotate(-1.4deg); }
+.card:nth-child(2){ transform:rotate(1.2deg); background:var(--note); }
+.card:hover,.card:focus-visible{ transform:rotate(0) translateY(-6px); }
+.card__tag{ font-size:.64rem; letter-spacing:.24em; text-transform:uppercase; font-weight:700; color:var(--rust); }
+.card h3{ font-family:var(--display); text-transform:uppercase; font-size:1.55rem; line-height:1; margin:.1rem 0 0; }
+.card p{ margin:0; color:var(--ink-soft); font-size:.96rem; }
+.card__go{ margin-top:auto; padding-top:1rem; font-family:var(--hand); font-size:1.35rem; color:var(--blue); }
+
+/* ========== RSVP ========== */
+.sheet{
+  background:var(--paper); color:var(--ink); padding:clamp(1.8rem,5vw,3rem);
+  box-shadow:var(--lift); clip-path:var(--torn); display:grid; gap:1.4rem;
+  transform:rotate(-.5deg); position:relative;
+}
+.field{ display:grid; gap:.4rem; }
+.field label{ font-family:var(--hand); font-size:1.4rem; line-height:1; color:var(--blue); }
+.field input,.field select{
+  font-family:var(--body); font-size:1rem; padding:.8rem .9rem;
+  border:none; border-bottom:2px solid rgba(20,16,13,.35);
+  background:rgba(255,255,255,.45); color:var(--ink); width:100%;
+}
+.field small{ color:var(--ink-soft); font-size:.82rem; }
+.field small a{ color:var(--blue); }
+.row{ display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; }
+
+.btn{
+  font-family:var(--display); text-transform:uppercase; letter-spacing:.04em; font-size:1.15rem;
+  background:var(--blue); color:#fff; border:none; padding:1rem 2.4rem;
+  cursor:pointer; justify-self:start; box-shadow:5px 5px 0 var(--ink);
+  transition:transform .14s ease,box-shadow .14s ease;
+}
+.btn:hover,.btn:focus-visible{ transform:translate(-2px,-2px); box-shadow:8px 8px 0 var(--ink); }
+.btn:active{ transform:translate(3px,3px); box-shadow:1px 1px 0 var(--ink); }
+.btn[disabled]{ opacity:.6; cursor:wait; }
+
+.status{
+  font-family:var(--hand); font-size:1.35rem; line-height:1.3;
+  padding:.85rem 1.1rem; display:none; border:2px dashed rgba(20,16,13,.4);
+}
+.status.is-shown{ display:block; }
+.status.is-ok{ background:rgba(46,99,245,.14); }
+.status.is-err{ background:rgba(192,82,42,.16); }
+
+/* ========== FOOTER ========== */
+footer{ padding:4rem 0 5rem; text-align:center; }
+footer .sign{ font-family:var(--script); font-style:italic; font-size:clamp(2.2rem,8vw,4.4rem); color:#fff; margin:0 0 .7rem; line-height:1; }
+footer p{ margin:.35rem 0; color:#C9B79C; }
+footer a{ color:var(--amber); }
+.rule{ height:1px; background:rgba(239,227,206,.22); width:min(1060px,92vw); margin:0 auto; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width:820px){
+  .hero__grid{ grid-template-columns:1fr; }
+  .details{ max-width:none; }
+  .sticky{ margin-left:0; }
+}
+@media (max-width:600px){
+  .countdown__grid{ grid-template-columns:repeat(2,1fr); }
+  .row{ grid-template-columns:1fr; }
+  .star{ width:30px; height:30px; }
+  .headline .name{ margin-left:.4rem; }
+}
+@media (prefers-reduced-motion:reduce){
+  *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="star5" viewBox="0 0 100 100">
+    <defs>
+      <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#FFE9A8"/><stop offset="45%" stop-color="#E8A33D"/><stop offset="100%" stop-color="#9C5A15"/>
+      </linearGradient>
+    </defs>
+    <path fill="url(#gold)" d="M50 3 61 36 96 36 68 57 78 91 50 70 22 91 32 57 4 36 39 36Z"/>
+  </symbol>
+</svg>
+
+<!-- ============ TOP BAND ============ -->
+<div class="band" aria-hidden="true"><div class="band__track" id="marquee"></div></div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <span class="star" style="top:2%;right:4%;transform:rotate(14deg)"><svg><use href="#star5"/></svg></span>
+    <span class="star" style="top:46%;left:-3%;width:30px;height:30px;transform:rotate(-20deg)"><svg><use href="#star5"/></svg></span>
+
+    <span class="batch" id="eyebrow"></span>
+
+    <h1 class="headline">
+      <span class="line" id="heroLine1"></span>
+      <span class="name" id="heroName"></span>
+      <span class="line line--blue" id="heroLine2"></span>
+    </h1>
+
+    <div class="hero__grid">
+      <div>
+        <p class="blurb" id="tagline"></p>
+        <div class="sticky" id="stickyNote">
+          <span class="tape tape--r"></span>
+          <h4 id="noteTitle"></h4>
+          <p id="noteBody"></p>
+        </div>
+      </div>
+
+      <div class="paper paper--lined details">
+        <span class="pin"></span>
+        <dl>
+          <div><dt>When</dt><dd id="dDate"></dd></div>
+          <div><dt>What time</dt><dd id="dTime"></dd></div>
+          <div><dt>Where</dt><dd id="dWhere"></dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ COUNTDOWN ============ -->
+<section id="countdownSection" aria-labelledby="cdH">
+  <div class="wrap">
+    <h2 id="cdH" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Time left</h2>
+    <div class="countdown__grid">
+      <div class="tile"><span class="pin"></span><span class="tile__num" id="cdDays">--</span><span class="tile__label">Days</span></div>
+      <div class="tile"><span class="pin"></span><span class="tile__num" id="cdHours">--</span><span class="tile__label">Hours</span></div>
+      <div class="tile"><span class="pin"></span><span class="tile__num" id="cdMins">--</span><span class="tile__label">Minutes</span></div>
+      <div class="tile"><span class="pin"></span><span class="tile__num" id="cdSecs">--</span><span class="tile__label">Seconds</span></div>
+    </div>
+    <p class="cd-note" id="cdNote">until we send her off properly</p>
+  </div>
+</section>
+
+<!-- ============ FILM STRIP ============ -->
+<section id="filmSection" class="hidden">
+  <div class="wrap">
+    <span class="star" style="top:0;left:1%;width:32px;height:32px;transform:rotate(-16deg)"><svg><use href="#star5"/></svg></span>
+    <div class="head"><h2 id="filmTitle"></h2></div>
+    <div class="film-scroll">
+      <div class="film" id="filmStrip"></div>
+    </div>
+    <p class="film-hint" id="filmHint">scroll →</p>
+  </div>
+</section>
+
+<div class="rule" id="ruleTop"></div>
+
+<!-- ============ CARDS ============ -->
+<section id="cardsSection">
+  <div class="wrap">
+    <span class="star" style="top:6%;right:2%;width:34px;height:34px;transform:rotate(-12deg)"><svg><use href="#star5"/></svg></span>
+    <div class="head"><h2>Before <em>you</em> come</h2></div>
+
+    <div class="cards">
+      <a class="card" id="photoCard" href="#" target="_blank" rel="noopener">
+        <span class="tape tape--l"></span>
+        <span class="card__tag">Shared album</span>
+        <h3>Drop your photos</h3>
+        <p>Every blurry group shot, every terrible candid, every picture from a night nobody remembers. Upload them and they'll play on the screen.</p>
+        <span class="card__go">Open the album →</span>
+      </a>
+
+      <a class="card" href="#rsvp">
+        <span class="tape tape--r"></span>
+        <span class="card__tag">Takes 20 seconds</span>
+        <h3>Tell us you're in</h3>
+        <p>Headcount decides the booking, so RSVP even if you're a maybe.</p>
+        <span class="card__go">Go to RSVP →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RSVP ============ -->
+<section id="rsvp">
+  <div class="wrap">
+    <div class="head"><h2>R<em>s</em>vp</h2></div>
+
+    <form class="sheet" id="rsvpForm" novalidate>
+      <span class="pin"></span>
+      <div class="row">
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" required autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="contact">Phone or email</label>
+          <input type="text" id="contact" name="contact" required autocomplete="email" />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="attending">Are you coming?</label>
+        <select id="attending" name="attending" required>
+          <option value="Yes">Yes, I'll be there</option>
+          <option value="Maybe">Maybe — will confirm</option>
+          <option value="No">Can't make it</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="deckTopic">Presenting something? What's the topic</label>
+        <input type="text" id="deckTopic" name="deck_topic" placeholder="e.g. A slideshow of her worst haircuts" />
+        <small id="deckHint">Optional. Leave blank if you're just here to watch.</small>
+      </div>
+
+      <p class="status" id="formStatus" role="status" aria-live="polite"></p>
+      <button class="btn" type="submit" id="submitBtn">Send my RSVP</button>
+    </form>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <span class="star" style="top:-6%;left:12%;width:28px;height:28px;transform:rotate(24deg)"><svg><use href="#star5"/></svg></span>
+    <p class="sign">See you there</p>
+    <p>Questions, or anything else — ping <span id="hostLinks"></span>.</p>
+    <p id="footerVenue"></p>
+  </div>
+</footer>
+
+<!-- config first, then the engine -->
+<script src="config.js"></script>
+<script>
+/* ==========================================================
+   DEFAULTS — used whenever config.js omits or blanks a value.
+   You shouldn't need to edit anything in this file.
+   ========================================================== */
+const DEFAULTS = {
+  guestOfHonour:"Our friend", heroLine1:"One last", heroLine2:"before she goes",
+  eyebrow:"You're invited",
+  tagline:"She's moving away, which means this is the last time we get everyone in one room for a good while. Come eat, talk nonsense, and see her off properly.",
+  noteTitle:"", noteBody:"",
+  dateTime:"", dateLabel:"Date TBD", timeLabel:"Time TBD",
+  venueName:"", venueAddress:"", mapsUrl:"",
+  photoDropUrl:"", deckDropUrl:"",
+  showFilmstrip:false, filmstripTitle:"The <em>evidence</em>", filmstripPhotos:[],
+  hosts:[{ name:"the organisers", phone:"" }],
+  formspreeId:""
+};
+
+const IST_OFFSET = "+05:30";
+const $ = (id) => document.getElementById(id);
+
+// pick config value, fall back to default when missing or blank
+const raw = (typeof window.INVITE_CONFIG === "object" && window.INVITE_CONFIG) || {};
+const C = {};
+Object.keys(DEFAULTS).forEach(k => {
+  const v = raw[k];
+  const empty = v === undefined || v === null || (typeof v === "string" && !v.trim()) || (Array.isArray(v) && !v.length);
+  C[k] = empty ? DEFAULTS[k] : v;
+});
+
+const digits = (p) => String(p || "").replace(/\D/g, "");
+
+/* ---------- text ---------- */
+$("eyebrow").textContent   = C.eyebrow;
+$("heroLine1").textContent = C.heroLine1;
+$("heroName").textContent  = C.guestOfHonour;
+$("heroLine2").textContent = C.heroLine2;
+$("tagline").textContent   = C.tagline;
+$("dDate").textContent     = C.dateLabel;
+$("dTime").textContent     = C.timeLabel + (C.timeLabel.match(/tbd/i) ? "" : " IST");
+document.title = "Farewell — " + C.guestOfHonour;
+
+/* ---------- where (TBD-aware) ---------- */
+const where = $("dWhere");
+if (!C.venueName){
+  where.innerHTML = '<span class="tbd">TBD — we\'ll update this here</span>';
+} else if (C.mapsUrl){
+  where.innerHTML = '<a href="' + C.mapsUrl + '" target="_blank" rel="noopener"></a><br><span></span>';
+  where.querySelector("a").textContent = C.venueName;
+  where.querySelector("span").textContent = C.venueAddress;
+} else {
+  where.innerHTML = "<span></span><br><span></span>";
+  const s = where.querySelectorAll("span");
+  s[0].textContent = C.venueName;
+  s[1].textContent = C.venueAddress;
+}
+$("footerVenue").textContent = C.venueAddress || "";
+
+/* ---------- sticky note ---------- */
+if (C.noteTitle || C.noteBody){
+  $("noteTitle").textContent = C.noteTitle;
+  $("noteBody").textContent  = C.noteBody;
+} else {
+  $("stickyNote").classList.add("hidden");
+}
+
+/* ---------- film strip ----------
+   Only renders when showFilmstrip is true AND there's at least one photo.
+   Paths can be repo-relative ("images/riya-01.jpg") or full https URLs.
+   Frames that fail to load remove themselves; if none survive, the
+   whole section hides rather than showing an empty strip. */
+if (C.showFilmstrip === true && Array.isArray(C.filmstripPhotos) && C.filmstripPhotos.length){
+  const strip = $("filmStrip");
+  let pending = 0;
+
+  C.filmstripPhotos.forEach((item, i) => {
+    const src = typeof item === "string" ? item : (item && item.src);
+    if (!src) return;
+
+    const frame = document.createElement("div");
+    frame.className = "frame";
+
+    const img = document.createElement("img");
+    img.src = src;
+    img.loading = "lazy";
+    img.alt = (item && item.alt) ? item.alt : "Photo " + (i + 1) + " of " + C.guestOfHonour;
+
+    pending++;
+    img.addEventListener("error", () => {
+      frame.remove();
+      if (!strip.children.length) $("filmSection").classList.add("hidden");
+    });
+
+    frame.appendChild(img);
+    strip.appendChild(frame);
+  });
+
+  if (pending){
+    $("filmTitle").innerHTML = C.filmstripTitle;
+    $("filmSection").classList.remove("hidden");
+    // the scroll hint is pointless if everything already fits
+    requestAnimationFrame(() => {
+      const sc = document.querySelector(".film-scroll");
+      if (sc && sc.scrollWidth <= sc.clientWidth + 4) $("filmHint").classList.add("hidden");
+    });
+  }
+}
+
+/* ---------- photos card ----------
+   No album link means the only thing left in that section is the
+   "go to RSVP" card, which isn't worth a section on its own.
+   So the whole block (and the rule above it) collapses. */
+if (C.photoDropUrl){
+  $("photoCard").href = C.photoDropUrl;
+} else {
+  $("cardsSection").classList.add("hidden");
+  $("ruleTop").classList.add("hidden");
+}
+
+/* ---------- slides upload hint ---------- */
+if (C.deckDropUrl){
+  $("deckHint").innerHTML = 'Optional. Leave blank if you\'re just here to watch. Slides go <a href="' + C.deckDropUrl + '" target="_blank" rel="noopener">in this folder</a>.';
+}
+
+/* ---------- organiser links ---------- */
+$("hostLinks").innerHTML = C.hosts.map((h, i) => {
+  const label = h.name || "an organiser";
+  const link  = digits(h.phone) ? '<a href="https://wa.me/' + digits(h.phone) + '" target="_blank" rel="noopener">' + label + "</a>" : label;
+  const sep   = i === 0 ? "" : (i === C.hosts.length - 1 ? " or " : ", ");
+  return sep + link;
+}).join("");
+
+/* ---------- marquee ---------- */
+const mt = "Farewell " + C.guestOfHonour + " ✦ " + C.dateLabel + " ✦ " + C.timeLabel + " ✦ RSVP inside ✦ ";
+$("marquee").innerHTML = "<span>" + mt.repeat(6) + "</span><span>" + mt.repeat(6) + "</span>";
+
+/* ---------- countdown (locked to IST) ---------- */
+let timer = null;
+const target = C.dateTime ? new Date(C.dateTime + IST_OFFSET).getTime() : NaN;
+
+if (isNaN(target)){
+  $("countdownSection").classList.add("hidden");
+} else {
+  const pad = (n) => String(n).padStart(2, "0");
+  const tick = () => {
+    const diff = target - Date.now();
+    if (diff <= 0){
+      ["cdDays","cdHours","cdMins","cdSecs"].forEach(id => $(id).textContent = "00");
+      $("cdNote").textContent = "it's happening — see you there";
+      clearInterval(timer);
+      return;
+    }
+    const s = Math.floor(diff / 1000);
+    $("cdDays").textContent  = pad(Math.floor(s / 86400));
+    $("cdHours").textContent = pad(Math.floor(s % 86400 / 3600));
+    $("cdMins").textContent  = pad(Math.floor(s % 3600 / 60));
+    $("cdSecs").textContent  = pad(s % 60);
+  };
+  tick();
+  timer = setInterval(tick, 1000);
+}
+
+/* ---------- rsvp ---------- */
+const form = $("rsvpForm"), status = $("formStatus"), btn = $("submitBtn");
+const primaryHost = C.hosts[0] || {};
+
+const showStatus = (msg, ok) => {
+  status.textContent = msg;
+  status.className = "status is-shown " + (ok ? "is-ok" : "is-err");
+};
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(form).entries());
+
+  if (!data.name.trim() || !data.contact.trim()){
+    showStatus("Add your name and a way to reach you, then send again.", false);
+    return;
+  }
+
+  // no formspree configured -> hand off to WhatsApp
+  if (!C.formspreeId){
+    if (!digits(primaryHost.phone)){
+      showStatus("RSVP isn't wired up yet. Message one of the organisers directly.", false);
+      return;
+    }
+    const lines = [
+      "RSVP for " + C.guestOfHonour + "'s farewell",
+      "Name: " + data.name,
+      "Contact: " + data.contact,
+      "Coming: " + data.attending,
+      data.deck_topic ? "Presenting: " + data.deck_topic : ""
+    ].filter(Boolean).join("\n");
+    window.open("https://wa.me/" + digits(primaryHost.phone) + "?text=" + encodeURIComponent(lines), "_blank");
+    showStatus("WhatsApp is open with your RSVP — hit send there to confirm.", true);
+    return;
+  }
+
+  btn.disabled = true; btn.textContent = "Sending…";
+  try{
+    const res = await fetch("https://formspree.io/f/" + C.formspreeId, {
+      method:"POST",
+      headers:{ "Accept":"application/json", "Content-Type":"application/json" },
+      body: JSON.stringify(data)
+    });
+    if (!res.ok) throw new Error("failed");
+    form.querySelectorAll("input").forEach(el => el.value = "");
+    showStatus("You're on the list, " + data.name.split(" ")[0] + ". See you on " + C.dateLabel + ".", true);
+  } catch {
+    showStatus("That didn't go through. Message " + (primaryHost.name || "an organiser") + " and you'll be added manually.", false);
+  } finally {
+    btn.disabled = false; btn.textContent = "Send my RSVP";
+  }
+});
+</script>
+</body>
+</html>
