@@ -51,7 +51,7 @@ window.INVITE_CONFIG = {
      in, and list them below. Repo-relative paths beat links — they can't
      expire, get rate-limited, or go private on you.
 
-       filmstripPhotos: ["images/riya-01.jpg", "images/riya-02.jpg"]
+       filmstripPhotos: ["images/riya-01.jpeg", "images/riya-02.jpeg"]
 
      Full https:// URLs work too, but only ones pointing straight at an
      image file. A Google Photos or Drive *share* link will NOT work here —
@@ -64,14 +64,14 @@ window.INVITE_CONFIG = {
      the object form and set "position" to bias the crop — the first number
      is horizontal, so a higher value keeps more of the right side:
 
-       { src: "images/riya-04.jpg", position: "72% 50%" } */
+       { src: "images/riya-04.jpeg", position: "72% 50%" } */
   showFilmstrip: true,
   filmstripTitle: "The <em>evidence</em>",   // <em> renders in the script italic
   filmstripPhotos: [
-    "images/riya-01.jpg",                                // beach, white dress
-    "images/riya-02.jpg",                                // rocks, sweater
-    "images/riya-03.jpg",                                // spiral staircase
-    { src: "images/riya-04.jpg", position: "68% 45%" }   // fort selfie (landscape)
+    "images/riya-01.jpeg",                                // beach, white dress
+    "images/riya-02.jpeg",                                // rocks, sweater
+    "images/riya-03.jpeg",                                // spiral staircase
+    { src: "images/riya-04.jpeg", position: "68% 45%" }   // fort selfie (landscape)
   ],
 
   /* ---------- SLIDES ----------
