@@ -21,7 +21,7 @@ window.INVITE_CONFIG = {
   /* ---------- THE STICKY NOTE ----------
      Shows as a yellow post-it. Set both to "" to hide it. */
   noteTitle: "Fair warning",
-  noteBody:  "We are collectively losing our wife. Please be gentle with us.",
+  noteBody:  "Our marriage to Riya is turning long distance, please be gentle on us.",
 
   /* ---------- WHEN ----------
      dateTime drives the countdown. Format: YYYY-MM-DDTHH:MM:SS
@@ -39,7 +39,7 @@ window.INVITE_CONFIG = {
 
   /* ---------- PHOTOS ----------
      Shared Google Photos album. Leave "" to hide the photos card. */
-  photoDropUrl: "",
+  photoDropUrl: "https://drive.google.com/drive/folders/1G2brdOoBJuewlB7UHsV0QtXIWiPZyKqB?usp=sharing",
 
   /* ---------- FILM STRIP ----------
      A strip of photos with sprocket holes, like an old negative.
@@ -58,14 +58,20 @@ window.INVITE_CONFIG = {
      those are web pages, not images.
 
      Portrait shots crop best (frames are 3:4). Four to eight is the sweet
-     spot. Anything that fails to load quietly drops itself. */
-  showFilmstrip: false,
+     spot. Anything that fails to load quietly drops itself.
+
+     A plain string is enough for portrait photos. For landscape ones, use
+     the object form and set "position" to bias the crop — the first number
+     is horizontal, so a higher value keeps more of the right side:
+
+       { src: "images/riya-04.jpg", position: "72% 50%" } */
+  showFilmstrip: true,
   filmstripTitle: "The <em>evidence</em>",   // <em> renders in the script italic
   filmstripPhotos: [
-    // "images/riya-01.jpg",
-    // "images/riya-02.jpg",
-    // "images/riya-03.jpg",
-    // "images/riya-04.jpg"
+    "images/riya-01.jpg",                                // beach, white dress
+    "images/riya-02.jpg",                                // rocks, sweater
+    "images/riya-03.jpg",                                // spiral staircase
+    { src: "images/riya-04.jpg", position: "68% 45%" }   // fort selfie (landscape)
   ],
 
   /* ---------- SLIDES ----------
@@ -77,13 +83,13 @@ window.INVITE_CONFIG = {
      Shown in the footer. First one also receives the RSVP on WhatsApp
      if formspreeId below is left empty. Country code + digits only. */
   hosts: [
-    { name: "Hitansh", phone: "+919999999991" },
-    { name: "Mayank",  phone: "+919999999992" },
-    { name: "Vaibhav", phone: "+919999999993" }
+    { name: "Hitansh", phone: "+919650424175" },
+    { name: "Mayank",  phone: "+919711568658" },
+    { name: "Vaibhav", phone: "+918586049164" }
   ],
 
   /* ---------- RSVP DELIVERY ----------
      Free account at formspree.io -> new form -> paste the ID here (e.g. "xyzabcde").
      Leave "" and the button opens WhatsApp to the first organiser instead. */
-  formspreeId: ""
+  formspreeId: "moeadkro"
 };

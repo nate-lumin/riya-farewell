@@ -518,6 +518,8 @@ if (C.showFilmstrip === true && Array.isArray(C.filmstripPhotos) && C.filmstripP
     img.src = src;
     img.loading = "lazy";
     img.alt = (item && item.alt) ? item.alt : "Photo " + (i + 1) + " of " + C.guestOfHonour;
+    // "position" biases the crop, e.g. "70% 40%". Defaults to centre.
+    if (item && item.position) img.style.objectPosition = item.position;
 
     pending++;
     img.addEventListener("error", () => {
