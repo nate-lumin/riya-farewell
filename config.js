@@ -68,10 +68,11 @@ window.INVITE_CONFIG = {
   showFilmstrip: true,
   filmstripTitle: "The <em>evidence</em>",   // <em> renders in the script italic
   filmstripPhotos: [
-    "images/riya-01.jpeg",                                // beach, white dress
-    "images/riya-02.jpeg",                                // rocks, sweater
-    "images/riya-03.jpeg",                                // spiral staircase
-    { src: "images/riya-04.jpeg", position: "68% 45%" }   // fort selfie (landscape)
+    "images/riya-01.jpeg",                                // fort, couple in mist
+    { src: "images/riya-02.jpeg", position: "50% 38%" },  // café at night (9:16, crop to her)
+    "images/riya-03.jpeg",                                // café selfie, straw hat
+    "images/riya-04.jpeg",                                // rocks, sweater
+    { src: "images/riya-05.jpeg", position: "50% 40%" }   // beach, bandana (9:16)
   ],
 
   /* ---------- SLIDES ----------
