@@ -11,7 +11,7 @@ window.INVITE_CONFIG = {
   guestOfHonour: "Riya",
 
   // The big headline reads:  [heroLine1]  Riya  [heroLine2]
-  heroLine1: "One last",
+  heroLine1: "One last night with",
   heroLine2: "before Seattle",
 
   eyebrow: "You're invited",
